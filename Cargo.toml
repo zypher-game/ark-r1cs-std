@@ -1,11 +1,11 @@
 [package]
-name = "ark-r1cs-std"
+name = "ark-r1cs-std-zypher"
 version = "0.4.0"
 authors = [ "arkworks contributors" ]
 description = "A standard library for constraint system gadgets"
 homepage = "https://arkworks.rs"
-repository = "https://github.com/arkworks-rs/r1cs-std"
-documentation = "https://docs.rs/ark-r1cs-std/"
+repository = "https://github.com/zypher-game/r1cs-std-zypher"
+documentation = "https://docs.rs/ark-r1cs-std-zypher/"
 keywords = ["zero-knowledge", "cryptography", "zkSNARK", "SNARK", "r1cs"]
 categories = ["cryptography"]
 include = ["Cargo.toml", "src", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
@@ -14,10 +14,10 @@ edition = "2021"
 resolver = "2"
 
 [dependencies]
-ark-ff = { version = "0.4.0", default-features = false }
-ark-ec = { version = "0.4.0", default-features = false }
-ark-std = { version = "0.4.0", default-features = false }
-ark-relations = { version = "0.4.0", default-features = false }
+ark-ff = { version = "0.4.0", default-features = false, package = "ark-ff-zypher"  }
+ark-ec = { version = "0.4.0", default-features = false, package = "ark-ec-zypher"  }
+ark-std = { version = "0.4.0", default-features = false, package = "ark-std-zypher"  }
+ark-relations = { version = "0.4.0", default-features = false, package = "ark-relations-zypher"  }
 
 derivative = { version = "2", features = ["use_core"] }
 tracing = { version = "0.1", default-features = false, features = [ "attributes" ] }
@@ -72,18 +72,3 @@ lto = "thin"
 incremental = true
 debug-assertions = true
 debug = true
-
-[patch.crates-io]
-ark-ff = { git = "https://github.com/arkworks-rs/algebra/" }
-ark-ec = { git = "https://github.com/arkworks-rs/algebra/" }
-ark-poly = { git = "https://github.com/arkworks-rs/algebra/" }
-ark-serialize = { git = "https://github.com/arkworks-rs/algebra/" }
-ark-test-curves = { git = "https://github.com/arkworks-rs/algebra/" }
-ark-bn254 = { git = "https://github.com/arkworks-rs/curves/" }
-ark-bls12-377 = { git = "https://github.com/arkworks-rs/curves/" }
-ark-bls12-381 = { git = "https://github.com/arkworks-rs/curves/" }
-ark-mnt4-298 = { git = "https://github.com/arkworks-rs/curves/" }
-ark-mnt4-753 = { git = "https://github.com/arkworks-rs/curves/" }
-ark-mnt6-298 = { git = "https://github.com/arkworks-rs/curves/" }
-ark-mnt6-753 = { git = "https://github.com/arkworks-rs/curves/" }
-ark-pallas = { git = "https://github.com/arkworks-rs/curves/" }
